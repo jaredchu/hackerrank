@@ -19,5 +19,7 @@ def diff(a, b):
             y.remove(i)
     return y
 
+a = input().strip()
+b = input().strip()
 
-print(number_needed('bacdc', 'dcbad'))
+print(number_needed(a, b))
