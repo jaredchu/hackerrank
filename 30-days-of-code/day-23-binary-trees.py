@@ -16,25 +16,27 @@ class Solution:
         return root
 
     def visit(self, root):
-        current_child = []
+        child_list = []
 
         if root.left is not None:
-            current_child.append(root.left)
+            child_list.append(root.left)
         if root.right is not None:
-            current_child.append(root.right)
-        return current_child
+            child_list.append(root.right)
+        return child_list
 
     def levelOrder(self, root):
-        queue = [root]
-        level = []
+        if root is None:
+            return
 
+        level = [root]
+        queue = [root]
         while len(queue):
             visit = self.visit(queue[0])
             queue.pop(0)
             queue += visit
             level += visit
 
-        print(str(root.data) + " " + " ".join(str(num.data) for num in level))
+        print(" ".join(str(num.data) for num in level))
 
 T=int(input())
 myTree=Solution()
