@@ -15,7 +15,6 @@ def is_prime(number):
 
 
 n = int(input().strip())
-arr = []
 for _ in range(n):
     if is_prime(int(input().strip())):
         print('Prime')
